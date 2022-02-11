@@ -15,7 +15,7 @@ resource "azurerm_app_service_plan" "example" {
   resource_group_name = data.azurerm_resource_group.rg.name
 
   sku {
-    tier = "Standard"
+    tier = "basic"
     size = "S1"
   }
 }
