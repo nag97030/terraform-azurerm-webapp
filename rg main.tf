@@ -20,11 +20,11 @@ resource "azurerm_app_service_plan" "rg" {
   }
 }
 
-resource "azurerm_app_service" "rg" {
+resource "azurerm_app_service" "example" {
   name                = "appservice${random_id.server.hex}"
   location            = data.azurerm_resource_group.rg.location
   resource_group_name = data.azurerm_resource_group.rg.name
-  app_service_plan_id = azurerm_app_service_plan.example.id
+  app_service_plan_id = azurerm_app_service_plan.rg.id
 
   site_config {
     dotnet_framework_version = "v4.0"
