@@ -1,5 +1,5 @@
 data "azurerm_resource_group" "rg" {
-  name = "tfrg"
+  name = "tfrg1"
 }
 
 resource "random_id" "server" {
