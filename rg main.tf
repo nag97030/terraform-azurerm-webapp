@@ -9,7 +9,7 @@ resource "random_id" "server" {
   byte_length = 8
 }
 
-resource "azurerm_app_service_plan" "example" {
+resource "azurerm_app_service_plan" "rg" {
   name                = "appserviceplan${random_id.server.hex}"
   location            = data.azurerm_resource_group.rg.location
   resource_group_name = data.azurerm_resource_group.rg.name
@@ -20,7 +20,7 @@ resource "azurerm_app_service_plan" "example" {
   }
 }
 
-resource "azurerm_app_service" "example" {
+resource "azurerm_app_service" "rg" {
   name                = "appservice${random_id.server.hex}"
   location            = data.azurerm_resource_group.rg.location
   resource_group_name = data.azurerm_resource_group.rg.name
